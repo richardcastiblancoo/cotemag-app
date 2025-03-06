@@ -1,11 +1,25 @@
+---
+import "../styles/global.css";
+
+const {title = "Corporacion Tecnica del Magdalena"} = Astro.props;
+---
+
 <!doctype html>
-<html lang="en">
+<html lang="es">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="description" content="Quienes Somos?
+		Nuestro objetivo es siempre ofrecer Programas de Formación para el Trabajo y el Desarrollo Humano, para crear oportunidades y mejoramiento de la calidad de vida de nuestros estudiantes">
+		<meta name="keywords" content="Inicio, Novedades, Programas, Contacto, Quienes Somos">
+		<meta name="author" content="Corporacion Tecnica del Magdalena">
+		<meta name="robots" content="index, follow">
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+		<link rel="icon" type="image/svg+xml" href="logo-cotemag.png" />
+		<title>{title}</title>
 	</head>
 	<body>
 		<slot />
@@ -13,10 +27,21 @@
 </html>
 
 <style>
-	html,
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+html,
 	body {
 		margin: 0;
 		width: 100%;
 		height: 100%;
 	}
+
+.roboto-<uniquifier> {
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}	
+
 </style>

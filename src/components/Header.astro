@@ -1,0 +1,116 @@
+---
+import Botonlogin from "./Botonlogin.astro"
+import Menuhamburguesa from "./menuhamburguesa.astro"
+---
+
+<header class="header">
+    <div class="logo-text">
+        <img src="logo-cotemag.png" class="logo" alt="logo-cotemag">
+        <h1>COTEMAG</h1>
+    </div>
+    <nav class="navbar">
+        <ul>
+            <li><a class="content_a" title="INICIO" href="">INICIO</a></li>
+            <li><a class="content_a" title="NOVEDADES" href="">NOVEDADES</a></li>
+            <li><a class="content_a" title="CONOCENOS" href="">CONOCENOS</a></li>
+            <li><a class="content_a" title="SERVICIOS" href="">SERVICIOS</a></li>
+            <li><a class="content_a" title="CONTACTO" href="">CONTACTO</a></li>
+        </ul>
+    </nav>
+    <div class="boton-container">
+        <!-- 
+        <a href="" class="boton-login" ><Botonlogin /></a>
+        -->
+        <a href="" class="Menuhamburguesa"><Menuhamburguesa /></a>
+    </div>
+</header>
+
+<style>
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #232D3F;
+    }
+
+    .logo-text{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        margin: auto;
+    }
+
+    .logo{
+        width: 100px;
+    }
+
+    h1{
+        text-align: center;
+        color: #EEF1DA;
+        font-size: 2rem;
+        font-weight: 900;
+    }
+
+    .navbar{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+    }
+
+    ul,li{
+        display: flex;
+        gap: 20PX;
+    }
+
+    .content_a{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #FFC785;
+        font-size: 1.2rem;
+        font-weight: 700;
+        text-align: center;
+        text-decoration: none;
+    }
+
+    .boton-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+    }
+
+    .Menuhamburguesa{
+        display: none;
+    }
+
+    @media (max-width: 768px) {
+        .logo-text{
+            margin-right: 180px;
+        }
+
+        .boton-login{
+            display: none;
+        }
+
+        .navbar{
+            display: none;
+        }
+
+        h1{
+            display: none;
+        }
+
+        .logo{
+            width: 50px;
+        }
+
+        .Menuhamburguesa{
+            display: flex;
+        }
+    }
+
+
+</style>
