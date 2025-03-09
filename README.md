@@ -1,7 +1,7 @@
-# Astro Starter Kit: Basics
+# COTEMAG
 
 ```sh
-npm create astro@latest -- --template basics
+https://fa15c29f.cotemag-app.pages.dev/
 ```
 
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
@@ -10,7 +10,7 @@ npm create astro@latest -- --template basics
 
 > 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+<img src="Captura de pantalla 2025-03-09 134155.png" alt="portada">
 
 ## 🚀 Project Structure
 
