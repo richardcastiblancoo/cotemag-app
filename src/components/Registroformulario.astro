@@ -1,0 +1,224 @@
+---
+const departments = [
+  "Amazonas",
+  "Antioquia",
+  "Arauca",
+  "Atlántico",
+  "Bogotá D.C.",
+  "Bolívar",
+  // Add more departments as needed
+];
+
+const modalities = [
+  "Presencial",
+  "Virtual",
+  "Híbrida"
+];
+
+const programs = [
+  "Ingeniería de Software",
+  "Administración de Empresas",
+  "Medicina",
+  // Add more programs as needed
+];
+
+const educationLevels = [
+  "Pregrado",
+  "Postgrado",
+  "Maestría",
+  "Doctorado"
+];
+
+const idTypes = [
+  "Cédula de Ciudadanía",
+  "Cédula de Extranjería",
+  "Pasaporte",
+  "Tarjeta de Identidad"
+];
+---
+
+<div>
+
+  <h2>Conoce nuestra oferta académica, tenemos inscripciones abiertas 6 veces al año.</h2>
+  
+</div>
+
+<div>
+
+  <div class="container-1">
+    <p>¡Déjanos tus datos!</p>
+    <p>Te brindaremos información acerca del programa de tu elección y opciones de financiamiento.</p>
+    <img src="img--1.png" alt="">
+  </div>
+  
+  <div class="form-container">
+  
+  
+    <form class="registration-form">
+      <div class="form-row">
+        <div class="select-wrapper">
+          <select name="idType" required>
+            <option value="">Tipo ID</option>
+            {idTypes.map(type => <option value={type}>{type}</option>)}
+          </select>
+        </div>
+        <input 
+          type="text" 
+          placeholder="Número de documento" 
+          name="documentNumber"
+          required
+        />
+      </div>
+  
+      <div class="form-row">
+        <input 
+          type="text" 
+          placeholder="Nombres" 
+          name="firstName"
+          required
+        />
+        <input 
+          type="text" 
+          placeholder="Apellidos" 
+          name="lastName"
+          required
+        />
+      </div>
+  
+      <input 
+        type="email" 
+        placeholder="Correo electrónico" 
+        name="email"
+        required
+      />
+      
+      <input 
+        type="tel" 
+        placeholder="Número de celular" 
+        name="phone"
+        required
+      />
+  
+      <select name="department" required>
+        <option value="">Selecciona tu departamento</option>
+        {departments.map(dept => <option value={dept}>{dept}</option>)}
+      </select>
+  
+      <select name="modality" required>
+        <option value="">Selecciona la modalidad que deseas estudiar</option>
+        {modalities.map(mode => <option value={mode}>{mode}</option>)}
+      </select>
+  
+      <select name="program" required>
+        <option value="">Selecciona tu programa</option>
+        {programs.map(program => <option value={program}>{program}</option>)}
+      </select>
+  
+      <select name="educationLevel" required>
+        <option value="">Selecciona tu nivel de formación</option>
+        {educationLevels.map(level => <option value={level}>{level}</option>)}
+      </select>
+  
+      <div class="terms-container">
+        <label class="checkbox-wrapper">
+          <input type="checkbox" required name="terms" />
+          <span>Al enviar aceptas <a href="#">términos, condiciones</a> y <a href="#">Política de manejo de datos</a></span>
+        </label>
+      </div>
+  
+      <button type="submit">Quiero estudiar</button>
+    </form>
+  </div>
+</div>
+
+<style>
+  .form-container {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .registration-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  input,
+  select,
+  button {
+    padding: 0.75rem 1rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 1em;
+  }
+
+  button {
+    background-color: #1a202c;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    border: none;
+    margin-top: 1rem;
+  }
+
+  button:hover {
+    background-color: #2d3748;
+  }
+
+  .terms-container {
+    margin-top: 0.5rem;
+  }
+
+  .checkbox-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    color: #4a5568;
+  }
+
+  .checkbox-wrapper input[type="checkbox"] {
+    width: auto;
+  }
+
+  .checkbox-wrapper a {
+    color: #2b6cb0;
+    text-decoration: none;
+  }
+
+  .checkbox-wrapper a:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 640px) {
+    .form-row {
+      grid-template-columns: 1fr;
+    }
+
+    .form-container {
+      margin: 1rem;
+      padding: 1rem;
+    }
+  }
+</style>

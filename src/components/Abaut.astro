@@ -1,36 +1,57 @@
 ---
-
+const services = [
+  {
+    icon: "👥",
+    title: "Recurso humano",
+    description: "Nuestro recurso humano está compuesto por profesionales altamente capacitados y comprometidos con la excelencia educativa, brindando una atención personalizada y de calidad a cada estudiante.",
+    color: "bg-red-50 border-red-100"
+  },
+  {
+    icon: "🎯",
+    title: "Formación integral",
+    description: "Nuestra formación integral se enfoca en el desarrollo académico, emocional y social de los estudiantes, preparándolos para enfrentar los desafíos del mundo moderno con confianza y habilidades sólidas.",
+    color: "bg-green-100 border-green-100"
+  },
+  {
+    icon: "⚙️",
+    title: "Aulas especializadas",
+    description: "Nuestras aulas especializadas están equipadas con tecnología avanzada y recursos específicos para cada materia, proporcionando un entorno óptimo para el aprendizaje práctico y teórico.",
+    color: "bg-yellow-50 border-yellow-100"
+  },
+  {
+    icon: "🏀",
+    title: "Salud, cultura, deportes y recreación",
+    description: "Nuestro bienestar institucional promueve un ambiente saludable y equilibrado, donde estudiantes y personal pueden desarrollarse plenamente tanto a nivel personal como profesional.",
+    color: "bg-purple-50 border-purple-100"
+  },
+  {
+    icon: "👥",
+    title: "Prácticas en el sector productivo",
+    description: "Ofrecemos prácticas en el ámbito laboral que permiten a los estudiantes aplicar sus conocimientos en entornos reales, adquiriendo experiencia valiosa y estableciendo conexiones profesionales.",
+    color: "bg-pink-50 border-pink-100"
+  },
+  {
+    icon: "✈️",
+    title: "Financiación en todos los programas",
+    description: "Brindamos opciones de financiación en todos nuestros programas, facilitando el acceso a una educación de calidad sin preocuparse por las barreras económicas.",
+    color: "bg-blue-50 border-blue-100"
+  }
+];
 ---
 
-<div class="max-w-7xl mx-auto px-6 lg:px-8 py-16">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-        <!-- Texto -->
-        <div>
-            <h2 class="text-4xl font-bold text-gray-900">Quienes Somos?</h2>
-            <p class="mt-4 text-gray-600">Nuestro objetivo es siempre ofrecer Programas de Formación para el Trabajo y el Desarrollo Humano, para crear oportunidades y mejoramiento de la calidad de vida de nuestros estudiantes y también un mayor crecimiento económico y social de la comunidad del Magdalena. Formamos el recurso humano de la región hombre y mujeres en competencias laborales que se ajustan a las necesidades del sector productivo, forjando los valores cívicos y éticos que permitan impulsar el desarrollo y crecimiento integral de nuestra sociedad.</p>
-        </div>
-        <!-- Imagen -->
-        <div>
-            <img src="cotemag-img-1.png" alt="Office desk" class="rounded-lg shadow-lg">
-        </div>
-    </div>
-    
-    <!-- Beneficios -->
-    <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-        <div>
-            <img src="https://img.icons8.com/ios/50/000000/delivery-truck--v1.png" class="mx-auto" />
-            <h3 class="mt-4 text-lg font-semibold">Free shipping</h3>
-            <p class="text-gray-600">It's not actually free we just price it into the products. Someone's paying for it, and it's not us.</p>
-        </div>
-        <div>
-            <img src="https://img.icons8.com/ios/50/000000/medal.png" class="mx-auto" />
-            <h3 class="mt-4 text-lg font-semibold">10-year warranty</h3>
-            <p class="text-gray-600">If it breaks in the first 10 years we'll replace it. After that you're on your own though.</p>
-        </div>
-        <div>
-            <img src="https://img.icons8.com/ios/50/000000/change.png" class="mx-auto" />
-            <h3 class="mt-4 text-lg font-semibold">Exchanges</h3>
-            <p class="text-gray-600">If you don't like it, trade it to one of your friends for something of theirs. Don't send it here though.</p>
-        </div>
-    </div>
+<div class="max-w-7xl mx-auto px-4 py-16">
+  <div class="text-center mb-16">
+    <h2 class="text-2xl text-gray-600 mb-4">Lo que ofrecemos</h2>
+    <h3 class="text-4xl font-bold text-[#37458D]">Descubre lo que tenemos para ti</h3>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    {services.map(service => (
+      <div class={`p-6 rounded-lg border ${service.color} transition-transform hover:scale-105`}>
+        <div class="text-4xl mb-4">{service.icon}</div>
+        <h4 class="text-xl font-semibold text-[#37458D] mb-3">{service.title}</h4>
+        <p class="text-gray-600 leading-relaxed">{service.description}</p>
+      </div>
+    ))}
+  </div>
 </div>
