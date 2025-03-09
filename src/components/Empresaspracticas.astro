@@ -1,39 +1,56 @@
 ---
+const empresas = [
+  { name: "Dentalium Vital", logo: "BASCOSTA-2.png" },
+  { name: "Droguería Dr. DR", logo: "CAPRI-1.png" },
+  { name: "Equimedis", logo: "CLINICA-BAHIA-1.png" },
+  { name: "Farmacenter", logo: "DENTALIUM-VITAL-2.png" },
+  { name: "Full Color", logo: "EQUIMEDIS-2.png" },
+  { name: "Hilton Garden Inn", logo: "FULL-COLOR-2.png" },
+];
 
+// Duplicamos la lista para crear un efecto de desplazamiento infinito
+const empresasDuplicadas = [...empresas, ...empresas];
 ---
 
-
-<h2 class="h2">Empresas aliadas</h2>
-
-<div class="empresas-container">
-    <img class="img-empresas" src="FULL-COLOR-2.png" alt="">
-    <img class="img-empresas" src="EQUIMEDIS-2.png" alt="">
-    <img class="img-empresas" src="DENTALIUM-VITAL-2.png" alt="">
-    <img class="img-empresas" src="CLINICA-BAHIA-1.png" alt="">
-    <img class="img-empresas" src="CAPRI-1.png" alt="">
-    <img class="img-empresas" src="BASCOSTA-2.png" alt="">
-</div>
-
 <style>
+  .carousel-container {
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    width: 100%;
+    background-color: #f3f4f6;
+    padding: 20px 0;
+  }
 
+  .carousel-track {
+    display: flex;
+    animation: scrollLeft 15s linear infinite;
+  }
 
-    .h2{
-        font-size: 2rem;
-        font-weight: 700;
-        text-align: center;
-        color: #211C84;
+  .carousel-track img {
+    max-height: 80px;
+    margin: 0 20px;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .carousel-track img:hover {
+    transform: scale(1.1);
+  }
+
+  @keyframes scrollLeft {
+    from {
+      transform: translateX(0%);
     }
-
-    .empresas-container{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 20px;
+    to {
+      transform: translateX(-50%);
     }
-
-    @media (max-width: 768px) {
-        .img-empresas{
-            width: 150px;
-        }
-    }
+  }
 </style>
+
+<section class="carousel-container">
+  <div class="carousel-track">
+    {empresasDuplicadas.map((empresa, index) => (
+      <img key={index} src={empresa.logo} alt={empresa.name} />
+    ))}
+  </div>
+</section>
