@@ -1,72 +1,206 @@
 ---
-
 ---
 
-<input type="checkbox" id="checkbox">
-    <label for="checkbox" class="toggle">
-        <div class="bars" id="bar1"></div>
-        <div class="bars" id="bar2"></div>
-        <div class="bars" id="bar3"></div>
-</label>
-
-<style>
+<div class="hamburger-menu">
+    <button class="hamburger" aria-label="Menu" aria-expanded="false">
+      <span class="hamburger-box">
+        <span class="hamburger-inner"></span>
+      </span>
+    </button>
+    <nav class="menu">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/services">Services</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
   
-#checkbox {
-  display: none;
-}
-
-.toggle {
-  position: relative;
-  width: 40px;
-  height: 40px;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  transition-duration: .5s;
-}
-
-.bars {
-  width: 100%;
-  height: 4px;
-  background-color: wheat;
-  border-radius: 4px;
-}
-
-#bar2 {
-  transition-duration: .8s;
-}
-
-#bar1,#bar3 {
-  width: 70%;
-}
-
-#checkbox:checked + .toggle .bars {
-  position: absolute;
-  transition-duration: .5s;
-}
-
-#checkbox:checked + .toggle #bar2 {
-  transform: scaleX(0);
-  transition-duration: .5s;
-}
-
-#checkbox:checked + .toggle #bar1 {
-  width: 100%;
-  transform: rotate(45deg);
-  transition-duration: .5s;
-}
-
-#checkbox:checked + .toggle #bar3 {
-  width: 100%;
-  transform: rotate(-45deg);
-  transition-duration: .5s;
-}
-
-#checkbox:checked + .toggle {
-  transition-duration: .5s;
-  transform: rotate(180deg);
-}
-</style>
+  <style>
+    .hamburger-menu {
+      display: block;
+      position: relative;
+      z-index: 1001;
+    }
+  
+    .hamburger {
+      padding: 15px;
+      display: inline-block;
+      cursor: pointer;
+      background-color: transparent;
+      border: 0;
+      margin: 0;
+      transition: transform 0.3s ease-in-out;
+    }
+  
+    .hamburger-box {
+      width: 30px;
+      height: 24px;
+      display: inline-block;
+      position: relative;
+    }
+  
+    .hamburger-inner {
+      display: block;
+      top: 50%;
+      margin-top: -2px;
+    }
+  
+    .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+      width: 30px;
+      height: 3px;
+      background-color: #333;
+      position: absolute;
+      transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    }
+  
+    .hamburger-inner::before, .hamburger-inner::after {
+      content: "";
+      display: block;
+    }
+  
+    .hamburger-inner::before {
+      top: -10px;
+    }
+  
+    .hamburger-inner::after {
+      bottom: -10px;
+    }
+  
+    .menu {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 250px;
+      height: 100vh;
+      background-color: white;
+      padding: 4rem 2rem;
+      box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+      transition: right 0.3s ease-in-out;
+      overflow-y: auto;
+      z-index: 1000;
+    }
+  
+    .menu.active {
+      right: 0;
+    }
+  
+    .menu ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      opacity: 0;
+      transform: translateX(20px);
+      transition: opacity 0.3s ease-in-out 0.2s, transform 0.3s ease-in-out 0.2s;
+    }
+  
+    .menu.active ul {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  
+    .menu li {
+      margin: 1.5rem 0;
+      opacity: 0;
+      transform: translateX(20px);
+      transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    }
+  
+    .menu.active li {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  
+    .menu li:nth-child(1) { transition-delay: 0.1s; }
+    .menu li:nth-child(2) { transition-delay: 0.2s; }
+    .menu li:nth-child(3) { transition-delay: 0.3s; }
+    .menu li:nth-child(4) { transition-delay: 0.4s; }
+  
+    .menu a {
+      color: #333;
+      text-decoration: none;
+      font-size: 1.2rem;
+      transition: color 0.3s ease;
+      display: block;
+      padding: 0.5rem 0;
+    }
+  
+    .menu a:hover {
+      color: #666;
+      transform: translateX(5px);
+    }
+  
+    /* Hamburger animation classes */
+    .hamburger.active .hamburger-inner {
+      transform: rotate(45deg);
+      transition-delay: 0.1s;
+    }
+  
+    .hamburger.active .hamburger-inner::before {
+      top: 0;
+      opacity: 0;
+      transition: top 0.2s ease-out, opacity 0.2s ease-out;
+    }
+  
+    .hamburger.active .hamburger-inner::after {
+      bottom: 0;
+      transform: rotate(-90deg);
+      transition: bottom 0.2s ease-out, transform 0.2s ease-out 0.2s;
+    }
+  
+    @media (min-width: 768px) {
+      .hamburger-menu {
+        display: none;
+      }
+    }
+  
+    /* Add overlay when menu is active */
+    .hamburger-menu::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+      z-index: 999;
+    }
+  
+    .hamburger-menu.active::before {
+      opacity: 1;
+      visibility: visible;
+    }
+  </style>
+  
+  <script>
+    const hamburger = document.querySelector('.hamburger');
+    const menu = document.querySelector('.menu');
+    const hamburgerMenu = document.querySelector('.hamburger-menu');
+  
+    hamburger?.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      menu?.classList.toggle('active');
+      hamburgerMenu?.classList.toggle('active');
+      const isExpanded = hamburger.getAttribute('aria-expanded') === 'true';
+      hamburger.setAttribute('aria-expanded', (!isExpanded).toString());
+      
+      // Prevent body scroll when menu is open
+      document.body.style.overflow = isExpanded ? 'auto' : 'hidden';
+    });
+  
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      const target = e.target as HTMLElement;
+      if (!hamburgerMenu?.contains(target) && hamburgerMenu?.classList.contains('active')) {
+        hamburger?.classList.remove('active');
+        menu?.classList.remove('active');
+        hamburgerMenu?.classList.remove('active');
+        hamburger?.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = 'auto';
+      }
+    });
+  </script>
