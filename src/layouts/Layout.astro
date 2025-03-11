@@ -1,6 +1,6 @@
 ---
 import "../styles/global.css";
-
+import Header from '../components/Header.astro';
 const {title = "Corporacion Tecnica del Magdalena"} = Astro.props;
 ---
 
@@ -35,6 +35,7 @@ const {title = "Corporacion Tecnica del Magdalena"} = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body>
+		<Header />
 		<slot />
 		<script>
 			if ("serviceWorker" in navigator) {
