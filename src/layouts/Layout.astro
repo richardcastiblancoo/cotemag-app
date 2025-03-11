@@ -15,14 +15,36 @@ const {title = "Corporacion Tecnica del Magdalena"} = Astro.props;
 		<meta name="author" content="Corporacion Tecnica del Magdalena">
 		<meta name="robots" content="index, follow">
 		<meta name="generator" content={Astro.generator} />
+		<meta property="og:title" content="Cotemag" />
+		<meta property="og:type" content="video.movie" />
+		<meta property="og:url" content="https://www.cotemag.edu.co/index.php/auth/login/" />
+		<meta property="og:image" content="https://www.cotemag.edu.co/uploads/images/system/public/slider/2.png" />
+		<link rel="manifest" href="/manifest.json">
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 		<link rel="icon" type="image/svg+xml" href="logo-cotemag.png" />
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-CP99HKP571"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'G-CP99HKP571');
+		</script>
 		<title>{title}</title>
 	</head>
 	<body>
 		<slot />
+		<script>
+			if ("serviceWorker" in navigator) {
+			  window.addEventListener("load", () => {
+				navigator.serviceWorker.register("/sw.js")
+				  .then(() => console.log("Service Worker registrado"))
+				  .catch((error) => console.error("Error registrando SW", error));
+			  });
+			}
+		  </script>
 	</body>
 </html>
 
@@ -30,19 +52,19 @@ const {title = "Corporacion Tecnica del Magdalena"} = Astro.props;
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 html,
+
 	*{
 		margin: 0;
 		padding: 0;
 		box-sizing: border-box;
 	}
 
-
-.roboto-<uniquifier> {
-  font-family: "Roboto", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
-  font-variation-settings: "wdth" 100;
-}	
+	.roboto-<uniquifier> {
+	font-family: "Roboto", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: <weight>;
+	font-style: normal;
+	font-variation-settings: "wdth" 100;
+	}	
 
 </style>

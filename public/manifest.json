@@ -1,0 +1,20 @@
+{
+    "name": "Cotemag",
+    "short_name": "AstroPWA",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#211C84",
+    "theme_color": "#ffffff",
+    "icons": [
+      {
+        "src": "/logo-cotemag.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "/logo-cotemag.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ]
+  }
