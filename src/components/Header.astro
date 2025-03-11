@@ -1,118 +1,55 @@
 ---
-import Botonlogin from "./Botonlogin.astro"
 import Menuhamburguesa from "./menuhamburguesa.astro"
+import Botonlogin from "./Botonlogin.astro"
 ---
 
-<header class="header">
-    <div class="logo-text">
-        <img src="logo-cotemag.png" class="logo" alt="logo-cotemag">
-        <h1>COTEMAG</h1>
+<header>
+  <nav>
+    <div class="nav-container">
+      <div class="logo">
+        <a href="/"><img src="logo-cotemag.png" class="logo-cotemag" alt=""></a>
+      </div>
+      
+      <Menuhamburguesa />
+
     </div>
-    <nav class="navbar">
-        <ul>
-            <li><a class="content_a" title="INICIO" href="/">Inicio</a></li>
-            <li><a class="content_a" title="INICIO" href="/programas">Programas</a></li>
-            <li><a class="content_a" title="NOVEDADES" href="">Novedades</a></li>
-            <li><a class="content_a" title="CONOCENOS" href="">Conocenos</a></li>
-            <li><a class="content_a" title="SERVICIOS" href="">Servicios</a></li>
-            <li><a class="content_a" title="CONTACTO" href="">Contacto</a></li>
-        </ul>
-    </nav>
-    <div class="boton-container">
-        <Botonlogin />
-        <a href="" class="Menuhamburguesa"><Menuhamburguesa /></a>
-    </div>
+  </nav>
 </header>
 
 <style>
-    header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background-color: #000957;
+  header {
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+
+
+  .logo-cotemag{
+    width: 70px;
+    height: 70px;
+  }
+
+  .nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo a {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+  }
+
+  @media screen and (max-width: 768px) {
+
+    .nav-container {
+      justify-content: space-between;
     }
-
-    .logo-text{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 10px;
-        margin: auto;
-    }
-
-    .logo{
-        width: 100px;
-    }
-
-    h1{
-        text-align: center;
-        color: #EEF1DA;
-        font-size: 2rem;
-        font-weight: 900;
-    }
-
-    .navbar{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: auto;
-    }
-
-    ul,li{
-        display: flex;
-        gap: 20PX;
-    }
-
-    .content_a{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: white;
-        font-size: 1.2rem;
-        font-weight: 700;
-        text-align: center;
-        text-decoration: none;
-    }
-
-    .boton-container{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: auto;
-    }
-
-    .Menuhamburguesa{
-        display: none;
-    }
-
-    @media (max-width: 768px) {
-        .logo-text{
-            margin-right: 180px;
-            margin-top: 20px;
-            margin-bottom: 20px;
-        }
-
-        .boton-login{
-            display: none;
-        }
-
-        .navbar{
-            display: none;
-        }
-
-        h1{
-            display: none;
-        }
-
-        .logo{
-            width: 60px;
-        }
-
-        .Menuhamburguesa{
-            display: flex;
-        }
-
-    }
-
-
+    
+  }
 </style>

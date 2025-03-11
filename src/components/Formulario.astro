@@ -1,73 +1,222 @@
 ---
-
 ---
-<!-- 
-<div class="form-container">
-    <h2>Formulario de Contacto</h2>
-    <form action="https://formsubmit.co/richardcastiblanco4@gmail.com" method="POST">
-        <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre" required>
-        
-        <label for="apellido">Apellido:</label>
-        <input type="text" id="apellido" name="apellido" required>
-        
-        <label for="correo">Correo:</label>
-        <input type="email" id="correo" name="correo" required>
-        
-        <label for="carrera">Tipo de Carrera:</label>
-        <select id="carrera" name="carrera">
-            <option value="ingenieria">Ingeniería</option>
-            <option value="medicina">Medicina</option>
-            <option value="derecho">Derecho</option>
-            <option value="otra">Otra</option>
-        </select>
-        
-        <label for="asunto">Asunto:</label>
-        <textarea id="asunto" name="asunto" rows="3" required></textarea>
-        
-        <label for="numero">Número:</label>
-        <input type="tel" id="numero" name="numero" required>
-        
-        <button type="submit">Enviar</button>
-    </form>
-</div>
 
-<style>
-    .form-container {
-        background: white;
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        width: 300px;
+<div class="container">
+    <div class="content">
+      <h1>Corporación Técnica del Magdalena</h1>
+      <p>Cotemag , ofrece Programas de Formación basados en Competencias Laborales.</p>
+    </div>
+    
+    <form class="form" action="https://formsubmit.co/Richardcastiblanco4@gmail.com" method="POST">
+      <div class="form-group">
+        <label for="fullName">Nombre Completo</label>
+        <input 
+          type="text" 
+          id="fullName" 
+          placeholder="Nombre Completo"
+          required
+        />
+      </div>
+  
+      <div class="form-group">
+        <label for="email">Correo Electrónico</label>
+        <input 
+          type="email" 
+          id="email" 
+          placeholder="tu Correo Electrónico"
+          required/>
+      </div>
+  
+      <div class="form-group">
+        <label for="phone">Celular</label>
+        <input 
+          type="tel" 
+          id="phone" 
+          placeholder="tu numero de celular"
+          required/>
+      </div>
+
+      <div class="form-group">
+        <label for="career">Ciudad</label>
+        <select id="career" required>
+          <option value="">Seleciona tu Ciudad</option>
+          <option value="ingenieria">Santa Marta</option>
+          <option value="administracion">Bogota</option>
+          <option value="medicina">Medellin</option>
+          <option value="derecho">Cali</option>
+          <option value="psicologia">Barranquilla</option>
+        </select>
+      </div>
+  
+      <div class="form-group">
+        <label for="career">Carrera Tecnicas</label>
+        <select id="career" required>
+          <option value="">Seleciona tu carrera tecnica</option>
+          <option value="ingenieria">Auxiliar de enfermeria</option>
+          <option value="administracion">Administracion en salud</option>
+          <option value="medicina">Programacion</option>
+          <option value="derecho">Ingles</option>
+          <option value="psicologia">Cocina</option>
+        </select>
+      </div>
+  
+      <div class="form-group">
+        <label for="subject">Asunto</label>
+        <textarea 
+          id="subject" 
+          placeholder="envia mensaje"
+          rows="4"
+          required
+        ></textarea>
+      </div>
+  
+      <button type="submit">Enviar</button>
+    </form>
+  </div>
+  
+  <style>
+    .container {
+      display: flex;
+      min-height: 100vh;
+      padding: 2rem;
+      gap: 6rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      align-items: center;
     }
-    .form-container h2 {
-        text-align: center;
-        margin-bottom: 20px;
+  
+    .content {
+      flex: 1;
     }
+  
+    h1 {
+      font-size: 4rem;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      font-weight: 900;
+      color: #111;
+    }
+  
+    p {
+      color: #666;
+      font-size: 1.25rem;
+      line-height: 1.5;
+    }
+  
+    .form {
+      flex: 1;
+      max-width: 450px;
+    }
+  
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+  
     label {
-        font-weight: bold;
-        display: block;
-        margin-top: 10px;
+      display: block;
+      margin-bottom: 0.5rem;
+      color: #111;
+      font-weight: 500;
     }
-    input, select, textarea {
-        width: 100%;
-        padding: 8px;
-        margin-top: 5px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
+  
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 0.875rem;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      font-size: 1rem;
+      background-color: #fff;
+      color: #111;
     }
+  
+    input::placeholder,
+    textarea::placeholder {
+      color: #9ca3af;
+    }
+  
+    select {
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23666666'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 1rem center;
+      background-size: 1.25rem;
+      padding-right: 2.5rem;
+    }
+  
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+  
+    .checkbox-group {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin: 1.5rem 0;
+    }
+  
+    .checkbox-group label {
+      margin: 0;
+      font-weight: normal;
+      color: #4b5563;
+    }
+  
+    .terms-link {
+      color: #111;
+      text-decoration: none;
+      font-weight: 500;
+    }
+  
     button {
-        width: 100%;
-        padding: 10px;
-        background-color: #007BFF;
-        color: white;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        margin-top: 15px;
+      width: 100%;
+      padding: 0.875rem;
+      background-color: #666;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background-color 0.2s;
     }
+  
     button:hover {
-        background-color: #0056b3;
+      background-color: #555;
     }
-</style>
--->
+  
+    .footer-text {
+      text-align: center;
+      margin-top: 1rem;
+      font-size: 0.875rem;
+      color: #666;
+    }
+  
+    .login-link {
+      display: block;
+      text-align: center;
+      margin-top: 1rem;
+      color: #111;
+      text-decoration: none;
+      font-weight: 500;
+    }
+  
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        padding: 1.5rem;
+        gap: 3rem;
+      }
+  
+      h1 {
+        font-size: 2.5rem;
+      }
+  
+      .form {
+        max-width: 100%;
+      }
+    }
+  </style>
