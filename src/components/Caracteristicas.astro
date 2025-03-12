@@ -7,15 +7,30 @@
     <dl class="grid grid-cols-1 gap-x-8 gap-y-16 text-center lg:grid-cols-3">
       <div class="mx-auto flex max-w-xs flex-col gap-y-4">
         <dt class="text-base/7 text-gray-600">Estudiantes</dt>
-        <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl counter" data-target="10000">0</dd>
+        <dd
+          class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl counter"
+          data-target="10000"
+        >
+          0
+        </dd>
       </div>
       <div class="mx-auto flex max-w-xs flex-col gap-y-4">
         <dt class="text-base/7 text-gray-600">Programas</dt>
-        <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl counter" data-target="29">0</dd>
+        <dd
+          class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl counter"
+          data-target="29"
+        >
+          0
+        </dd>
       </div>
       <div class="mx-auto flex max-w-xs flex-col gap-y-4">
         <dt class="text-base/7 text-gray-600">Practicantes</dt>
-        <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl counter" data-target="190">0</dd>
+        <dd
+          class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl counter"
+          data-target="190"
+        >
+          0
+        </dd>
       </div>
     </dl>
   </div>
@@ -24,34 +39,35 @@
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     const counters = document.querySelectorAll(".counter");
+
     const observer = new IntersectionObserver(
       (entries, observer) => {
-        entries.forEach(entry => {
+        entries.forEach((entry) => {
           if (entry.isIntersecting) {
             const counter = entry.target;
-            const target = +counter.getAttribute("data-target");
+            const target = Number(counter.getAttribute("data-target")); // Convertir el atributo a número
             let start = 0;
-            const duration = 2000; // Duración de la animación en milisegundos
-            const interval = 30; // Tiempo entre incrementos
-            const step = (target / (duration / interval));
+            const duration = 2000; // Duración total en milisegundos
+            const interval = 30; // Intervalo de actualización
+            const step = target / (duration / interval);
 
-            const updateCounter = () => {
+            const updateCounter = setInterval(() => {
               start += step;
               if (start < target) {
-                counter.textContent = Math.floor(start);
-                requestAnimationFrame(updateCounter);
+                counter.textContent = Math.floor(start).toString(); // Convertir a string
               } else {
-                counter.textContent = target;
+                counter.textContent = target.toString(); // Convertir a string
+                clearInterval(updateCounter);
               }
-            };
-            updateCounter();
+            }, interval);
+
             observer.unobserve(counter);
           }
         });
       },
-      { threshold: 0.5 }
+      { threshold: 0.5 },
     );
 
-    counters.forEach(counter => observer.observe(counter));
+    counters.forEach((counter) => observer.observe(counter));
   });
 </script>

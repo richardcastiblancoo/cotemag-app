@@ -3,68 +3,82 @@ const services = [
   {
     icon: "👥",
     title: "Recurso humano",
-    description: "Nuestro recurso humano está compuesto por profesionales altamente capacitados y comprometidos con la excelencia educativa, brindando una atención personalizada y de calidad a cada estudiante.",
-    color: "bg-red-50 border-red-100"
+    description:
+      "Nuestro recurso humano está compuesto por profesionales altamente capacitados y comprometidos con la excelencia educativa, brindando una atención personalizada y de calidad a cada estudiante.",
+    color: "bg-red-50 border-red-100",
   },
   {
     icon: "🎯",
     title: "Formación integral",
-    description: "Nuestra formación integral se enfoca en el desarrollo académico, emocional y social de los estudiantes, preparándolos para enfrentar los desafíos del mundo moderno con confianza y habilidades sólidas.",
-    color: "bg-green-100 border-green-100"
+    description:
+      "Nuestra formación integral se enfoca en el desarrollo académico, emocional y social de los estudiantes, preparándolos para enfrentar los desafíos del mundo moderno con confianza y habilidades sólidas.",
+    color: "bg-green-100 border-green-100",
   },
   {
     icon: "⚙️",
     title: "Aulas especializadas",
-    description: "Nuestras aulas especializadas están equipadas con tecnología avanzada y recursos específicos para cada materia, proporcionando un entorno óptimo para el aprendizaje práctico y teórico.",
-    color: "bg-yellow-50 border-yellow-100"
+    description:
+      "Nuestras aulas especializadas están equipadas con tecnología avanzada y recursos específicos para cada materia, proporcionando un entorno óptimo para el aprendizaje práctico y teórico.",
+    color: "bg-yellow-50 border-yellow-100",
   },
   {
     icon: "🏀",
     title: "Salud, cultura, deportes y recreación",
-    description: "Nuestro bienestar institucional promueve un ambiente saludable y equilibrado, donde estudiantes y personal pueden desarrollarse plenamente tanto a nivel personal como profesional.",
-    color: "bg-purple-50 border-purple-100"
+    description:
+      "Nuestro bienestar institucional promueve un ambiente saludable y equilibrado, donde estudiantes y personal pueden desarrollarse plenamente tanto a nivel personal como profesional.",
+    color: "bg-purple-50 border-purple-100",
   },
   {
     icon: "👥",
     title: "Prácticas en el sector productivo",
-    description: "Ofrecemos prácticas en el ámbito laboral que permiten a los estudiantes aplicar sus conocimientos en entornos reales, adquiriendo experiencia valiosa y estableciendo conexiones profesionales.",
-    color: "bg-pink-50 border-pink-100"
+    description:
+      "Ofrecemos prácticas en el ámbito laboral que permiten a los estudiantes aplicar sus conocimientos en entornos reales, adquiriendo experiencia valiosa y estableciendo conexiones profesionales.",
+    color: "bg-pink-50 border-pink-100",
   },
   {
     icon: "✈️",
     title: "Financiación en todos los programas",
-    description: "Brindamos opciones de financiación en todos nuestros programas, facilitando el acceso a una educación de calidad sin preocuparse por las barreras económicas.",
-    color: "bg-blue-50 border-blue-100"
-  }
+    description:
+      "Brindamos opciones de financiación en todos nuestros programas, facilitando el acceso a una educación de calidad sin preocuparse por las barreras económicas.",
+    color: "bg-blue-50 border-blue-100",
+  },
 ];
 ---
 
 <section>
-<div class="max-w-7xl mx-auto px-4 py-16">
-  <div class="text-center mb-16">
-    <h2 class="text-2xl text-gray-600 mb-4">Novedades</h2>
-    <h3 class="text-4xl font-bold text-[#37458D]">Descubre lo que tenemos para ti</h3>
-  </div>
+  <div class="max-w-7xl mx-auto px-4 py-16">
+    <div class="text-center mb-16">
+      <h2 class="text-2xl text-gray-600 mb-4">Novedades</h2>
+      <h3 class="text-4xl font-bold text-[#37458D]">
+        Descubre lo que tenemos para ti
+      </h3>
+    </div>
 
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-    {services.map(service => (
-      <div class={`p-6 rounded-lg border ${service.color} transition-transform hover:scale-105`}>
-        <div class="text-4xl mb-4">{service.icon}</div>
-        <h4 class="text-xl font-semibold text-[#37458D] mb-3">{service.title}</h4>
-        <p class="text-gray-600 leading-relaxed">{service.description}</p>
-      </div>
-    ))}
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {
+        services.map((service) => (
+          <div
+            class={`p-6 rounded-lg border ${service.color} transition-transform hover:scale-105`}
+          >
+            <div class="text-4xl mb-4">{service.icon}</div>
+            <h4 class="text-xl font-semibold text-[#37458D] mb-3">
+              {service.title}
+            </h4>
+            <p class="text-gray-600 leading-relaxed">{service.description}</p>
+          </div>
+        ))
+      }
+    </div>
   </div>
-</div>
 </section>
 
 <style>
-  section{
+  section {
     margin-top: 500px;
   }
 
   @media screen {
-    section{
+    section {
       padding-top: 240px;
     }
   }

@@ -1,115 +1,136 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Login - Cotemag">
-    <a href="/index" class="back-button">
-        <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m15 19-7-7 7-7"/>
-          </svg>          
-    </a>
-        <main class="min-h-screen bg-gradient-to-br from-primary to-secondary flex items-center justify-center p-4">
-            <div class="bg-white rounded-2xl shadow-xl w-full max-w-md p-8 space-y-8">
-              <div class="text-center">
-                <img src="logo-cotemag.png" class="logo-cotemag" alt="">
-                <h2 class="h2">Bienvenido</h2>
-                <p class="mt-2 text-gray-600">Por favor, inicie sesión en su cuenta</p>
-              </div>
-        
-              <form class="space-y-6">
-                <div>
-                  <label for="email" class="block text-sm font-medium text-gray-700">identificación estudiantil</label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    required
-                    class="mt-1 block w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors"
-                    placeholder="Ingrese sus datos"
-                  />
-                </div>
-        
-                <div>
-                  <label for="password" class="block text-sm font-medium text-gray-700">Contraseña</label>
-                  <input
-                    type="password"
-                    id="password"
-                    name="password"
-                    required
-                    class="mt-1 block w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors"
-                    placeholder="Ingrese su Contraseña"
-                  />
-                </div>
-        
-                <div class="flex items-center justify-between">
-                  <div class="flex items-center">
-                    <input
-                      type="checkbox"
-                      id="remember"
-                      name="remember"
-                      class="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary"
-                    />
-                    <label for="remember" class="ml-2 block text-sm text-gray-700">Guardar cuenta</label>
-                  </div>
-                  <a href="#" class="text-sm text-primary hover:text-secondary">¿Has olvidado tu contraseña?</a>
-                </div>
-        
-                <button
-                  type="submit"
-                  class="boton-inicio"
-                >
-                  Inicio de sesión
-                </button>
-              </form>
-        
-              <p class="text-center text-sm text-gray-600">
-                ¿No tienes una cuenta?
-                <a href="/registro" class="font-medium text-primary hover:text-secondary">Inscribirse</a>
-              </p>
-            </div>
-          </main>
+  <div class="absolute top-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
+  <a href="/index" class="back-button">
+    <svg
+      class="w-6 h-6 text-gray-800 dark:text-white"
+      aria-hidden="true"
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      fill="none"
+      viewBox="0 0 24 24"
+    >
+      <path
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="m15 19-7-7 7-7"></path>
+    </svg>
+  </a>
+  <main
+    class="min-h-screen bg-gradient-to-br from-primary to-secondary flex items-center justify-center p-4"
+  >
+    <div class="bg-white rounded-2xl shadow-xl w-full max-w-md p-8 space-y-8">
+      <div class="text-center">
+        <img src="logo-cotemag.png" class="logo-cotemag" alt="" />
+        <h2 class="h2">Bienvenido</h2>
+        <p class="mt-2 text-gray-600">Por favor, inicie sesión en su cuenta</p>
+      </div>
+
+      <form class="space-y-6">
+        <div>
+          <label for="email" class="block text-sm font-medium text-gray-700"
+            >identificación estudiantil</label
+          >
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            class="mt-1 block w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors"
+            placeholder="Ingrese sus datos"
+          />
+        </div>
+
+        <div>
+          <label for="password" class="block text-sm font-medium text-gray-700"
+            >Contraseña</label
+          >
+          <input
+            type="password"
+            id="password"
+            name="password"
+            required
+            class="mt-1 block w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors"
+            placeholder="Ingrese su Contraseña"
+          />
+        </div>
+
+        <div class="flex items-center justify-between">
+          <div class="flex items-center">
+            <input
+              type="checkbox"
+              id="remember"
+              name="remember"
+              class="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary"
+            />
+            <label for="remember" class="ml-2 block text-sm text-gray-700"
+              >Guardar cuenta</label
+            >
+          </div>
+          <a href="#" class="text-sm text-primary hover:text-secondary"
+            >¿Has olvidado tu contraseña?</a
+          >
+        </div>
+
+        <button type="submit" class="boton-inicio"> Inicio de sesión </button>
+      </form>
+
+      <p class="text-center text-sm text-gray-600">
+        ¿No tienes una cuenta?
+        <a
+          href="/registro"
+          class="font-medium text-primary hover:text-secondary">Inscribirse</a
+        >
+      </p>
+    </div>
+  </main>
 </Layout>
 
 <style>
-     body{
-        background-color: #2D336B;
-    }
+  body {
+    background-color: #2d336b;
+  }
 
-    .boton-inicio{
-        background-color: #2D336B;
-        color: white;
-        padding: 10px 0;
-        border-radius: 5px;
-        width: 100%;
-        font-size: 1.2rem;
-        font-weight: 600;
-        cursor: pointer;
-        transition: background-color 0.3s;
-    }
+  .boton-inicio {
+    background-color: #2d336b;
+    color: white;
+    padding: 10px 0;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
 
-    .back-button{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: absolute;
-        top: 1rem;
-        left: 1rem;
-        width: 1.5rem;
-        height: 2.5rem;
-    }
+  .back-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    width: 1.5rem;
+    height: 2.5rem;
+  }
 
-    .h2{
-        font-size: 2rem;
-        font-weight: 600;
-        color: #333;
-    }
+  .h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #333;
+  }
 
-    .logo-cotemag{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-left: 130px;
-        width: 100px;
-    }
-
+  .logo-cotemag {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 130px;
+    width: 100px;
+  }
 </style>

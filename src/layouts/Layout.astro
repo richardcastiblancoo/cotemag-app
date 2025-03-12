@@ -1,7 +1,10 @@
 ---
 import "../styles/global.css";
-import Header from '../components/Header.astro';
-const {title = "Corporacion Tecnica del Magdalena"} = Astro.props;
+
+const { title = "Corporacion Tecnica del Magdalena" } = Astro.props;
+
+console.log(import.meta.env.PUBLIC_RECAPTCHA_SITE_KEY);
+console.log(import.meta.env.RECAPTCHA_SECRET_KEY); // (Esto solo funcionará en el backend)
 ---
 
 <!doctype html>
@@ -9,63 +12,88 @@ const {title = "Corporacion Tecnica del Magdalena"} = Astro.props;
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<meta name="description" content="Quienes Somos?
-		Nuestro objetivo es siempre ofrecer Programas de Formación para el Trabajo y el Desarrollo Humano, para crear oportunidades y mejoramiento de la calidad de vida de nuestros estudiantes">
-		<meta name="keywords" content="Inicio, Novedades, Programas, Contacto, Quienes Somos">
-		<meta name="author" content="Corporacion Tecnica del Magdalena">
-		<meta name="robots" content="index, follow">
+		<meta
+			name="description"
+			content="Quienes Somos?
+		Nuestro objetivo es siempre ofrecer Programas de Formación para el Trabajo y el Desarrollo Humano, para crear oportunidades y mejoramiento de la calidad de vida de nuestros estudiantes"
+		/>
+		<meta
+			name="keywords"
+			content="Inicio, Novedades, Programas, Contacto, Quienes Somos"
+		/>
+		<meta name="author" content="Corporacion Tecnica del Magdalena" />
+		<meta name="robots" content="index, follow" />
 		<meta name="generator" content={Astro.generator} />
 		<meta property="og:title" content="Cotemag" />
 		<meta property="og:type" content="video.movie" />
-		<meta property="og:url" content="https://www.cotemag.edu.co/index.php/auth/login/" />
-		<meta property="og:image" content="https://www.cotemag.edu.co/uploads/images/system/public/slider/2.png" />
-		<link rel="manifest" href="/manifest.json">
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+		<meta
+			property="og:url"
+			content="https://www.cotemag.edu.co/index.php/auth/login/"
+		/>
+		<meta
+			property="og:image"
+			content="https://www.cotemag.edu.co/uploads/images/system/public/slider/2.png"
+		/>
+		<link rel="manifest" href="/manifest.json" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+			rel="stylesheet"
+		/>
 		<link rel="icon" type="image/svg+xml" href="logo-cotemag.png" />
 		<!-- Google tag (gtag.js) -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-CP99HKP571"></script>
+		<script
+			async
+			src="https://www.googletagmanager.com/gtag/js?id=G-CP99HKP571"
+		></script>
 		<script>
+			declare global {
+				interface Window {
+					dataLayer: any[];
+				}
+			}
 			window.dataLayer = window.dataLayer || [];
-			function gtag(){dataLayer.push(arguments);}
-			gtag('js', new Date());
-			gtag('config', 'G-CP99HKP571');
+			function gtag(...args: any[]) {
+				window.dataLayer.push(args);
+			}
+			gtag("js", new Date());
+			gtag("config", "G-CP99HKP571");
 		</script>
 		<title>{title}</title>
 	</head>
 	<body>
-		<Header />
 		<slot />
 		<script>
 			if ("serviceWorker" in navigator) {
-			  window.addEventListener("load", () => {
-				navigator.serviceWorker.register("/sw.js")
-				  .then(() => console.log("Service Worker registrado"))
-				  .catch((error) => console.error("Error registrando SW", error));
-			  });
+				window.addEventListener("load", () => {
+					navigator.serviceWorker
+						.register("/sw.js")
+						.then(() => console.log("Service Worker registrado"))
+						.catch((error) =>
+							console.error("Error registrando SW", error),
+						);
+				});
 			}
-		  </script>
+		</script>
 	</body>
 </html>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+	@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
-html,
-
-	*{
+	html,
+	* {
 		margin: 0;
 		padding: 0;
 		box-sizing: border-box;
 	}
 
-	.roboto-<uniquifier> {
-	font-family: "Roboto", sans-serif;
-	font-optical-sizing: auto;
-	font-weight: <weight>;
-	font-style: normal;
-	font-variation-settings: "wdth" 100;
-	}	
-
+	.roboto-<uniquifier > {
+		font-family: "Roboto", sans-serif;
+		font-optical-sizing: auto;
+		font-weight: <weight>;
+		font-style: normal;
+		font-variation-settings: "wdth" 100;
+	}
 </style>
