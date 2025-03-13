@@ -16,6 +16,7 @@
     "astro": "^5.4.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "sweetalert2": "^11.17.2",
     "swiper": "^11.2.5",
     "tailwindcss": "^4.0.9"
   }

@@ -1,5 +1,4 @@
 ---
-import Botonlogin from "./Botonlogin.astro"
 ---
 
 <div class="hamburger">
@@ -17,14 +16,13 @@ import Botonlogin from "./Botonlogin.astro"
   <li><a href="/login" title="aula virtual">aula virtual</a></li>
 </ul>
 
-
 <script>
-  const hamburger = document.querySelector('.hamburger');
-  const navLinks = document.querySelector('.nav-links');
+  const hamburger = document.querySelector(".hamburger");
+  const navLinks = document.querySelector(".nav-links");
 
-  hamburger?.addEventListener('click', () => {
-    navLinks?.classList.toggle('active');
-    hamburger?.classList.toggle('active');
+  hamburger?.addEventListener("click", () => {
+    navLinks?.classList.toggle("active");
+    hamburger?.classList.toggle("active");
   });
 </script>
 
@@ -78,7 +76,7 @@ import Botonlogin from "./Botonlogin.astro"
       background-color: white;
       padding: 1rem;
       gap: 1rem;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
 
     .nav-links.active {

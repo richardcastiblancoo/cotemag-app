@@ -6,126 +6,105 @@ const departments = [
   "Atlántico",
   "Bogotá D.C.",
   "Bolívar",
-  // Add more departments as needed
 ];
 
-const modalities = [
-  "Presencial",
-  "Virtual",
-  "Híbrida"
-];
+const modalities = ["Presencial", "Virtual", "Híbrida"];
 
 const programs = [
   "Ingeniería de Software",
   "Administración de Empresas",
   "Medicina",
-  // Add more programs as needed
 ];
 
-const educationLevels = [
-  "Pregrado",
-  "Postgrado",
-  "Maestría",
-  "Doctorado"
-];
+const educationLevels = ["Pregrado", "Postgrado", "Maestría", "Doctorado"];
 
 const idTypes = [
   "Cédula de Ciudadanía",
   "Cédula de Extranjería",
   "Pasaporte",
-  "Tarjeta de Identidad"
+  "Tarjeta de Identidad",
 ];
 ---
 
 <div>
-
-  <h2>Conoce nuestra oferta académica, tenemos inscripciones abiertas 6 veces al año.</h2>
-  
+  <h2>
+    Conoce nuestra oferta académica, tenemos inscripciones abiertas 6 veces al
+    año.
+  </h2>
 </div>
 
 <div>
-
   <div class="container-1">
     <p>¡Déjanos tus datos!</p>
-    <p>Te brindaremos información acerca del programa de tu elección y opciones de financiamiento.</p>
-    <img src="img--1.png" alt="">
+    <p>
+      Te brindaremos información acerca del programa de tu elección y opciones
+      de financiamiento.
+    </p>
+    <img src="img--1.png" alt="" />
   </div>
-  
+
   <div class="form-container">
-  
-  
     <form class="registration-form">
       <div class="form-row">
         <div class="select-wrapper">
           <select name="idType" required>
             <option value="">Tipo ID</option>
-            {idTypes.map(type => <option value={type}>{type}</option>)}
+            {idTypes.map((type) => <option value={type}>{type}</option>)}
           </select>
         </div>
-        <input 
-          type="text" 
-          placeholder="Número de documento" 
+        <input
+          type="text"
+          placeholder="Número de documento"
           name="documentNumber"
           required
         />
       </div>
-  
+
       <div class="form-row">
-        <input 
-          type="text" 
-          placeholder="Nombres" 
-          name="firstName"
-          required
-        />
-        <input 
-          type="text" 
-          placeholder="Apellidos" 
-          name="lastName"
-          required
-        />
+        <input type="text" placeholder="Nombres" name="firstName" required />
+        <input type="text" placeholder="Apellidos" name="lastName" required />
       </div>
-  
-      <input 
-        type="email" 
-        placeholder="Correo electrónico" 
+
+      <input
+        type="email"
+        placeholder="Correo electrónico"
         name="email"
         required
       />
-      
-      <input 
-        type="tel" 
-        placeholder="Número de celular" 
-        name="phone"
-        required
-      />
-  
+
+      <input type="tel" placeholder="Número de celular" name="phone" required />
+
       <select name="department" required>
         <option value="">Selecciona tu departamento</option>
-        {departments.map(dept => <option value={dept}>{dept}</option>)}
+        {departments.map((dept) => <option value={dept}>{dept}</option>)}
       </select>
-  
+
       <select name="modality" required>
         <option value="">Selecciona la modalidad que deseas estudiar</option>
-        {modalities.map(mode => <option value={mode}>{mode}</option>)}
+        {modalities.map((mode) => <option value={mode}>{mode}</option>)}
       </select>
-  
+
       <select name="program" required>
         <option value="">Selecciona tu programa</option>
-        {programs.map(program => <option value={program}>{program}</option>)}
+        {programs.map((program) => <option value={program}>{program}</option>)}
       </select>
-  
+
       <select name="educationLevel" required>
         <option value="">Selecciona tu nivel de formación</option>
-        {educationLevels.map(level => <option value={level}>{level}</option>)}
+        {educationLevels.map((level) => <option value={level}>{level}</option>)}
       </select>
-  
+
       <div class="terms-container">
         <label class="checkbox-wrapper">
           <input type="checkbox" required name="terms" />
-          <span>Al enviar aceptas <a href="#">términos, condiciones</a> y <a href="#">Política de manejo de datos</a></span>
+          <span
+            >Al enviar aceptas <a href="#">términos, condiciones</a> y <a
+              href="#">Política de manejo de datos</a
+            ></span
+          >
         </label>
       </div>
-  
+
       <button type="submit">Quiero estudiar</button>
     </form>
   </div>

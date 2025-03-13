@@ -1,0 +1,419 @@
+---
+const careers = [
+  {
+    id: 'software',
+    title: 'Desarrollo de Software',
+    image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&auto=format&fit=crop',
+    description: 'Aprende a crear aplicaciones y sistemas innovadores',
+    modules: [
+      {
+        title: 'Fundamentos de Programación',
+        subjects: ['Lógica de Programación', 'Estructuras de Datos', 'Algoritmos Básicos'],
+        characteristics: 'Módulo introductorio que establece las bases del pensamiento computacional'
+      },
+      {
+        title: 'Desarrollo Web',
+        subjects: ['HTML/CSS', 'JavaScript', 'Frameworks Modernos'],
+        characteristics: 'Enfoque práctico en tecnologías web actuales'
+      },
+      {
+        title: 'Bases de Datos',
+        subjects: ['SQL', 'Diseño de BD', 'Administración de Datos'],
+        characteristics: 'Gestión y manipulación profesional de datos'
+      }
+    ]
+  },
+  {
+    id: 'networks',
+    title: 'Redes y Telecomunicaciones',
+    image: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=800&auto=format&fit=crop',
+    description: 'Diseña y administra infraestructuras de red',
+    modules: [
+      {
+        title: 'Fundamentos de Redes',
+        subjects: ['Protocolos TCP/IP', 'Arquitectura de Redes', 'Seguridad Básica'],
+        characteristics: 'Conceptos fundamentales de conectividad y comunicación'
+      },
+      {
+        title: 'Administración de Redes',
+        subjects: ['Configuración de Routers', 'Switching', 'VLANs'],
+        characteristics: 'Gestión práctica de infraestructura de red'
+      }
+    ]
+  },
+  {
+    id: 'robotics',
+    title: 'Robótica Industrial',
+    image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&auto=format&fit=crop',
+    description: 'Desarrolla sistemas robóticos y automatización',
+    modules: [
+      {
+        title: 'Fundamentos de Robótica',
+        subjects: ['Mecánica', 'Electrónica Básica', 'Programación de PLCs'],
+        characteristics: 'Introducción a sistemas robóticos industriales'
+      },
+      {
+        title: 'Automatización Industrial',
+        subjects: ['Sistemas de Control', 'Sensores y Actuadores', 'Integración de Sistemas'],
+        characteristics: 'Diseño y implementación de sistemas automatizados'
+      }
+    ]
+  },
+  {
+    id: 'data',
+    title: 'Análisis de Datos',
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop',
+    description: 'Explora y analiza datos para tomar decisiones',
+    modules: [
+      {
+        title: 'Estadística Aplicada',
+        subjects: ['Probabilidad', 'Estadística Descriptiva', 'Inferencia Estadística'],
+        characteristics: 'Fundamentos matemáticos para análisis de datos'
+      },
+      {
+        title: 'Ciencia de Datos',
+        subjects: ['Python para Datos', 'Machine Learning', 'Visualización de Datos'],
+        characteristics: 'Técnicas avanzadas de análisis y predicción'
+      }
+    ]
+  }
+];
+---
+
+<section class="careers-section">
+  <h2>Nuestras Carreras Técnicas</h2>
+  
+  <div class="filter-buttons">
+    <button class="filter-btn active" data-filter="all">Todas</button>
+    {careers.map(career => (
+      <button class="filter-btn" data-filter={career.id}>
+        {career.title}
+      </button>
+    ))}
+  </div>
+
+  <div class="careers-grid">
+    {careers.map(career => (
+      <div class="career-card" data-category={career.id}>
+        <div class="image-container">
+          <img src={career.image} alt={career.title} loading="lazy" />
+        </div>
+        <div class="content">
+          <h3>{career.title}</h3>
+          <p>{career.description}</p>
+          <button class="learn-more" data-career={career.id} data-image={career.image} data-title={career.title}>
+            Saber más
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </button>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+  .careers-section {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    background: linear-gradient(83.21deg, #3245ff 0%, #bc52ee 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .filter-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+  }
+
+  .filter-btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    background: #f3f4f6;
+    color: #374151;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .filter-btn:hover {
+    background: #e5e7eb;
+  }
+
+  .filter-btn.active {
+    background: linear-gradient(83.21deg, #3245ff 0%, #bc52ee 100%);
+    color: white;
+  }
+
+  .careers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+
+  .career-card {
+    border-radius: 16px;
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+    transition: all 0.3s ease;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .career-card[hidden] {
+    display: none;
+  }
+
+  .career-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+  }
+
+  .image-container {
+    height: 200px;
+    overflow: hidden;
+  }
+
+  .image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .career-card:hover .image-container img {
+    transform: scale(1.1);
+  }
+
+  .content {
+    padding: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+    margin: 0 0 0.5rem 0;
+    color: #111827;
+  }
+
+  p {
+    color: #6b7280;
+    margin: 0 0 1.5rem 0;
+    line-height: 1.5;
+  }
+
+  .learn-more {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #3245ff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: gap 0.3s ease;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+
+  .learn-more:hover {
+    gap: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    .careers-section {
+      padding: 2rem 1rem;
+    }
+
+    h2 {
+      font-size: 2rem;
+    }
+
+    .filter-buttons {
+      margin-bottom: 2rem;
+    }
+
+    .filter-btn {
+      padding: 0.5rem 1rem;
+    }
+  }
+</style>
+
+<script>
+  import Swal from 'sweetalert2';
+
+  // Career data for the modal
+  const careerData = {
+    software: {
+      modules: [
+        {
+          title: 'Fundamentos de Programación',
+          subjects: ['Lógica de Programación', 'Estructuras de Datos', 'Algoritmos Básicos'],
+          characteristics: 'Módulo introductorio que establece las bases del pensamiento computacional'
+        },
+        {
+          title: 'Desarrollo Web',
+          subjects: ['HTML/CSS', 'JavaScript', 'Frameworks Modernos'],
+          characteristics: 'Enfoque práctico en tecnologías web actuales'
+        },
+        {
+          title: 'Bases de Datos',
+          subjects: ['SQL', 'Diseño de BD', 'Administración de Datos'],
+          characteristics: 'Gestión y manipulación profesional de datos'
+        }
+      ]
+    },
+    networks: {
+      modules: [
+        {
+          title: 'Fundamentos de Redes',
+          subjects: ['Protocolos TCP/IP', 'Arquitectura de Redes', 'Seguridad Básica'],
+          characteristics: 'Conceptos fundamentales de conectividad y comunicación'
+        },
+        {
+          title: 'Administración de Redes',
+          subjects: ['Configuración de Routers', 'Switching', 'VLANs'],
+          characteristics: 'Gestión práctica de infraestructura de red'
+        }
+      ]
+    },
+    robotics: {
+      modules: [
+        {
+          title: 'Fundamentos de Robótica',
+          subjects: ['Mecánica', 'Electrónica Básica', 'Programación de PLCs'],
+          characteristics: 'Introducción a sistemas robóticos industriales'
+        },
+        {
+          title: 'Automatización Industrial',
+          subjects: ['Sistemas de Control', 'Sensores y Actuadores', 'Integración de Sistemas'],
+          characteristics: 'Diseño y implementación de sistemas automatizados'
+        }
+      ]
+    },
+    data: {
+      modules: [
+        {
+          title: 'Estadística Aplicada',
+          subjects: ['Probabilidad', 'Estadística Descriptiva', 'Inferencia Estadística'],
+          characteristics: 'Fundamentos matemáticos para análisis de datos'
+        },
+        {
+          title: 'Ciencia de Datos',
+          subjects: ['Python para Datos', 'Machine Learning', 'Visualización de Datos'],
+          characteristics: 'Técnicas avanzadas de análisis y predicción'
+        }
+      ]
+    }
+  };
+
+  // Filter functionality
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const careerCards = document.querySelectorAll('.career-card');
+
+  filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      // Update active button
+      filterButtons.forEach(btn => btn.classList.remove('active'));
+      button.classList.add('active');
+
+      // Filter cards
+      const filter = button.dataset.filter;
+      
+      careerCards.forEach(card => {
+        if (filter === 'all' || card.dataset.category === filter) {
+          card.style.display = 'block';
+          setTimeout(() => {
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+          }, 10);
+        } else {
+          card.style.opacity = '0';
+          card.style.transform = 'translateY(20px)';
+          setTimeout(() => {
+            card.style.display = 'none';
+          }, 300);
+        }
+      });
+    });
+  });
+
+  // Modal functionality
+  document.querySelectorAll('.learn-more').forEach(button => {
+    button.addEventListener('click', (e) => {
+      e.preventDefault();
+      const careerId = button.dataset.career;
+      const careerImage = button.dataset.image;
+      const careerTitle = button.dataset.title;
+      const career = careerData[careerId];
+      
+      let modulesHtml = `
+        <div class="career-modal-content" style="text-align: left;">
+          <div class="career-image" style="text-align: center;">
+            <img src="${careerImage}" alt="${careerTitle}" style="width: 100%; height: 250px; object-fit: cover; border-radius: 8px; margin-bottom: 20px;">
+          </div>
+          <div class="modules-list">
+            <ol style="list-style-type: decimal; padding-left: 20px; margin: 0;">
+              ${career.modules.map((module, index) => `
+                <li style="margin-bottom: 20px; padding: 20px; background: #f8f9fa; border-radius: 8px;">
+                  <h3 style="color: #3245ff; margin: 0 0 15px 0; font-size: 1.3rem; text-align: left; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px;">
+                    ${module.title}
+                  </h3>
+                  <div style="margin-left: 15px;">
+                    <p style="margin: 8px 0; font-weight: 600; color: #4a5568;">Materias:</p>
+                    <ul style="list-style-type: disc; margin: 8px 0 15px 20px;">
+                      ${module.subjects.map(subject => `
+                        <li style="margin: 5px 0; color: #4a5568;">${subject}</li>
+                      `).join('')}
+                    </ul>
+                    <p style="margin: 8px 0; font-weight: 600; color: #4a5568;">Características:</p>
+                    <p style="margin: 8px 0 0 0; color: #4a5568; line-height: 1.5;">${module.characteristics}</p>
+                  </div>
+                </li>
+              `).join('')}
+            </ol>
+          </div>
+        </div>
+      `;
+
+      Swal.fire({
+        title: careerTitle,
+        html: modulesHtml,
+        width: 800,
+        showCloseButton: true,
+        showConfirmButton: false,
+        customClass: {
+          container: 'career-modal',
+          popup: 'career-popup',
+          header: 'career-header',
+          title: 'career-title',
+          content: 'career-content'
+        }
+      });
+
+      // Add custom styles to the modal
+      const modalTitle = document.querySelector('.career-title');
+      if (modalTitle) {
+        modalTitle.style.textAlign = 'center';
+        modalTitle.style.color = '#2d3748';
+        modalTitle.style.fontSize = '1.8rem';
+        modalTitle.style.marginBottom = '20px';
+        modalTitle.style.borderBottom = '2px solid #e2e8f0';
+        modalTitle.style.paddingBottom = '10px';
+      }
+    });
+  });
+</script>

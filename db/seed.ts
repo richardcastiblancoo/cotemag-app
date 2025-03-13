@@ -4,11 +4,16 @@ import { db, Estudiantes, Administradores, Profesores } from 'astro:db';
 export default async function seed() {
 	// TODO
 	await db.insert(Administradores).values([
-		{ id: 1, name: 'angello', email: 'angellodaniel2@gmail.com'},
+		{ id: 1, 
+		  name: 'angello', 
+		  email: 'angellodaniel2@gmail.com'
+		},
 	]);
 
 	await db.insert(Profesores).values([
-		{ id: 1, name: 'daconte', email: ''},
+		{ id: 1, 
+		  name: 'daconte', 
+		  email: ''},
 	])
 
 }

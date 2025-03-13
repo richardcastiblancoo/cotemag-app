@@ -2,92 +2,111 @@
 
 ---
 
-<div class="absolute inset-0 -z-10 h-full w-full bg-white bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:6rem_4rem]">
-    <div class="absolute bottom-0 left-0 right-0 top-0 bg-[radial-gradient(circle_800px_at_100%_200px,#d5c5ff,transparent)]">
-
+<div
+    class="absolute inset-0 -z-10 h-full w-full bg-white bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:6rem_4rem]"
+>
+    <div
+        class="absolute bottom-0 left-0 right-0 top-0 bg-[radial-gradient(circle_800px_at_100%_200px,#d5c5ff,transparent)]"
+    >
         <div class="container">
             <div class="text-content">
                 <h2>Lo que hacemos</h2>
                 <h1>Educación de calidad</h1>
-                <p>Nuestro objetivo es siempre ofrecer Programas de Formación para el Trabajo y el Desarrollo Humano, para crear oportunidades y mejoramiento de la calidad de vida de nuestros estudiantes y también un mayor crecimiento económico y social de la comunidad del Magdalena. Formamos el recurso humano de la región hombre y mujeres en competencias laborales que se ajustan a las necesidades del sector productivo, forjando los valores cívicos y éticos que permitan impulsar el desarrollo y crecimiento integral de nuestra sociedad.</p>
+                <p>
+                    Nuestro objetivo es siempre ofrecer Programas de Formación
+                    para el Trabajo y el Desarrollo Humano, para crear
+                    oportunidades y mejoramiento de la calidad de vida de
+                    nuestros estudiantes y también un mayor crecimiento
+                    económico y social de la comunidad del Magdalena. Formamos
+                    el recurso humano de la región hombre y mujeres en
+                    competencias laborales que se ajustan a las necesidades del
+                    sector productivo, forjando los valores cívicos y éticos que
+                    permitan impulsar el desarrollo y crecimiento integral de
+                    nuestra sociedad.
+                </p>
                 <a href="/" class="button">Ver Carreras</a>
             </div>
             <div class="image-container">
-                <img src="portada.jpg" alt="Imagen de la institución">
+                <img src="portada.jpg" alt="Imagen de la institución" />
             </div>
         </div>
     </div>
 </div>
 
 <style>
-
- .container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            max-width: 1200px;
-            margin: auto;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            flex-wrap: wrap;
-            margin-top: 200px;
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-width: 1200px;
+        margin: auto;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        flex-wrap: wrap;
+        margin-top: 200px;
+    }
+    .text-content {
+        flex: 1;
+        padding: 20px;
+        text-align: left;
+    }
+    .text-content h2 {
+        color: #1a237e;
+        font-size: 1.5rem;
+    }
+    .text-content h1 {
+        color: #0d47a1;
+        font-size: 2.5rem;
+        font-weight: bold;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    .text-content p {
+        color: #333;
+        line-height: 1.6;
+    }
+    .button {
+        background-color: #0d47a1;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        text-decoration: none;
+        display: inline-block;
+        margin-top: 10px;
+        border-radius: 5px;
+        font-size: 1rem;
+        cursor: pointer;
+    }
+    .image-container {
+        flex: 1;
+        text-align: center;
+        padding: 20px;
+    }
+    .image-container img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
+    @media (max-width: 768px) {
+        .container {
+            flex-direction: column;
+            text-align: center;
         }
         .text-content {
-            flex: 1;
-            padding: 20px;
-            text-align: left;
-        }
-        .text-content h2 {
-            color: #1A237E;
-            font-size: 1.5rem;
+            padding: 10px;
         }
         .text-content h1 {
-            color: #0D47A1;
-            font-size: 2.5rem;
-            font-weight: bold;
-            animation: fadeIn 1.5s ease-in-out;
+            font-size: 2rem;
         }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .text-content p {
-            color: #333;
-            line-height: 1.6;
-        }
-        .button {
-            background-color: #0D47A1;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            text-decoration: none;
-            display: inline-block;
-            margin-top: 10px;
-            border-radius: 5px;
-            font-size: 1rem;
-            cursor: pointer;
-        }
-        .image-container {
-            flex: 1;
-            text-align: center;
-            padding: 20px;
-        }
-        .image-container img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-        }
-        @media (max-width: 768px) {
-            .container {
-                flex-direction: column;
-                text-align: center;
-            }
-            .text-content {
-                padding: 10px;
-            }
-            .text-content h1 {
-                font-size: 2rem;
-            }
-        }
+    }
 </style>

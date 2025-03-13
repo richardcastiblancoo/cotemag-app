@@ -1,17 +1,17 @@
 ---
-import Menuhamburguesa from "./menuhamburguesa.astro"
-import Botonlogin from "./Botonlogin.astro"
+import Menuhamburguesa from "./menuhamburguesa.astro";
 ---
 
 <header>
   <nav>
     <div class="nav-container">
       <div class="logo">
-        <a href="/"><img src="logo-cotemag.png" class="logo-cotemag" alt=""></a>
+        <a href="/"
+          ><img src="logo-cotemag.png" class="logo-cotemag" alt="" /></a
+        >
       </div>
-      
-      <Menuhamburguesa />
 
+      <Menuhamburguesa />
     </div>
   </nav>
 </header>
@@ -20,11 +20,10 @@ import Botonlogin from "./Botonlogin.astro"
   header {
     width: 100%;
     background-color: white;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   }
 
-
-  .logo-cotemag{
+  .logo-cotemag {
     width: 100px;
     height: 100px;
   }
@@ -46,10 +45,8 @@ import Botonlogin from "./Botonlogin.astro"
   }
 
   @media screen and (max-width: 768px) {
-
     .nav-container {
       justify-content: space-between;
     }
-    
   }
 </style>
